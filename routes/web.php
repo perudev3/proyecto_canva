@@ -20,3 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('get/files', 'AdminController@get_files');
+
+Route::group(['middleware' => 'auth'], function () {
+    // User Admin
+    Route::get('/files', 'AdminController@index');
+    Route::post('create/files', 'AdminController@upload_files');
+
+    // User
+    Route::get('/my_files', 'UserController@index');
+    Route::get('/membership', 'MembershipController@index');
+    Route::post('create/membership', 'MembershipController@create_membership');
+});
