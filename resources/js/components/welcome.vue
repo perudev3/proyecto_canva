@@ -1,6 +1,19 @@
 <template>
+        <div>
+            <div class="container" style="margin-top:60px;">
+                <div class="row">
+                    <div class="col-sm-12" style="background: #8b3dff;border-radius: 6px;">
+                        <div id="div-search" align="center">
+                            <h2>¿Qué Buscas?</h2>
+                            <input type="text" class="form-control" id="input-search">
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
 
-            <div class="container" style="margin-top: -38rem;">
+                    </div>
+                </div>
+            </div>
+           <div class="container">
                 <div class="row" >
                     <div class="col-sm-3" v-for="data in files" style="margin-top: 26px;">
                         <div class="card">
@@ -16,6 +29,8 @@
                 </div>
             </div>
 
+            
+        </div>
 </template>
 
 
@@ -56,3 +71,16 @@
 
 
 </script>
+
+
+<style>
+
+    #div-search{
+        margin-top: 40px;
+        color: #fff;
+    }
+    #input-search{
+        width: 50%;
+        margin-top: 29px;
+    }
+</style>

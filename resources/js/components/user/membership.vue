@@ -47,6 +47,11 @@
             Create_Membership(){
                 User.CreateMembership(this.user).then( response => {
                     console.log(response.data);
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Exito',
+                        text: response.data.message
+                    })
                 })
                 .catch((error) => {
                     console.log(error);

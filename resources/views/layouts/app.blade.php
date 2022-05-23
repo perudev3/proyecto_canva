@@ -29,7 +29,7 @@
             font-family: 'Open Sans', sans-serif !important;
         }
         .navbar{
-            padding-top:15px;
+            padding-top:22px;
         }
 
         .wrapper {
@@ -123,9 +123,11 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+            @if(Auth::user())
                 <button type="button" id="sidebarCollapse" class="btn btn-info">
                     <span><i class="fas fa-bars"></i></span>
                 </button>
+            @endif
 
                 <a class="navbar-brand" style="padding:5px;">
                     {{ config('app.name', 'Canva') }}
