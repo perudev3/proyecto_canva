@@ -2222,6 +2222,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2259,6 +2292,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_src_sweetalert2_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _endpoints_admin_files__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../endpoints/admin/files */ "./resources/js/endpoints/admin/files.js");
 /* harmony import */ var _endpoints_admin_category__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../endpoints/admin/category */ "./resources/js/endpoints/admin/category.js");
+//
 //
 //
 //
@@ -8697,6 +8731,25 @@ exports.push([module.i, ".swal2-popup.swal2-toast {\n  box-sizing: border-box;\n
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.card{\n    margin: 5px;\n    border-radius: 11px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/welcome.vue?vue&type=style&index=0&lang=css&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/welcome.vue?vue&type=style&index=0&lang=css& ***!
@@ -8709,7 +8762,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#div-search{\n    margin-top: 40px;\n    color: #fff;\n}\n.input-group{\n    width: 50%;\n}\n#basic-addon1{\n    margin-top: 29px;\n    border-color: transparent;\n    background: #ffffff;\n}\n#input-search{\n    width: 50%;\n    margin-top: 29px;\n}\n#icon {\n    margin-top: 31px;\n    margin-bottom: 25px;\n}\n#icon ul {\n    list-style-type: none;\n     margin: 0;\n    padding: 0;\n    line-height: 68px;\n    margin-right: 73%;\n}\n#icon li {\n    display: inline-block;\n    width: 50%;\n}\n#icon img {\n    width: 58%;\n    border-radius: 30px;\n}\n#icon img:hover {\n    \n    background: #00000047;\n    padding: 10px;\n    transition: 1s;\n}\n@media screen and (min-width: 20em) {\n#icon li {\n        width: 33.33333%;\n}\n}\n", ""]);
+exports.push([module.i, "\n#div-search{\n    margin-top: 40px;\n    color: #fff;\n}\n.input-group{\n    width: 50%;\n}\n#basic-addon1{\n    margin-top: 29px;\n    border-color: transparent;\n    background: #ffffff;\n}\n#input-search{\n    width: 50%;\n    margin-top: 29px;\n}\n#icon {\n    margin-top: 31px;\n    margin-bottom: 25px;\n}\n#icon ul {\n    list-style-type: none;\n     margin: 0;\n    padding: 0;\n    line-height: 68px;\n    margin-right: 73%;\n}\n#icon li {\n    display: inline-block;\n    width: 50%;\n}\n#icon img {\n    width: 58%;\n    border-radius: 30px;\n}\n#icon img:hover {\n    \n    background: #00000047;\n    padding: 10px;\n    transition: 1s;\n}\n#icon label{\n    color: #ffffff;\n    font-size: 12px;\n}\n@media screen and (min-width: 20em) {\n#icon li {\n        width: 33.33333%;\n}\n}\n", ""]);
 
 // exports
 
@@ -51612,6 +51665,36 @@ module.exports = __webpack_require__(63);
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./membership.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/welcome.vue?vue&type=style&index=0&lang=css&":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/welcome.vue?vue&type=style&index=0&lang=css& ***!
@@ -56298,85 +56381,481 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col-sm-4", staticStyle: { "margin-top": "26px" } },
-        [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Membresia 1")]),
-              _vm._v(" "),
+    _c("div", {}, [
+      _c("div", { staticClass: "card-group" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
               _c(
-                "a",
+                "svg",
                 {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function ($event) {
-                      return _vm.Create_Membership()
-                    },
+                  attrs: {
+                    width: "24",
+                    height: "24",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg",
                   },
                 },
-                [_vm._v("Obtener")]
+                [
+                  _c("path", {
+                    attrs: {
+                      d: "M16.75 17.5h-9a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5Z",
+                      fill: "currentColor",
+                    },
+                  }),
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      "clip-rule": "evenodd",
+                      d: "M12.98 6.81a1.5 1.5 0 1 0-1.46.001c-.762 2.086-1.588 3.109-2.353 3.194-.862.095-1.613-.28-2.32-1.21a.807.807 0 0 0-.145-.147 1.5 1.5 0 1 0-1.204.602c0 .058.009.12.024.182l1.216 4.864A2.25 2.25 0 0 0 8.921 16h6.658a2.25 2.25 0 0 0 2.183-1.704l1.216-4.864a.81.81 0 0 0 .024-.182 1.5 1.5 0 1 0-1.203-.602.806.806 0 0 0-.136.135c-.743.935-1.5 1.314-2.33 1.222-.73-.082-1.56-1.108-2.353-3.194Z",
+                      fill: "currentColor",
+                    },
+                  }),
+                ]
+              ),
+              _vm._v(" Pro"),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(
+                "Ideal para personas y equipos que estan iniciando con canva"
               ),
             ]),
+            _vm._v(" "),
+            _vm._m(0),
+            _c("p", [_vm._v("Gratis para siempre")]),
+            _vm._v(" "),
+            _c("p"),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _vm._m(5),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+            _vm._v(" "),
+            _vm._m(8),
           ]),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-4", staticStyle: { "margin-top": "26px" } },
-        [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Membresia 2")]),
-              _vm._v(" "),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              on: {
+                click: function ($event) {
+                  return _vm.Create_Membership()
+                },
+              },
+            },
+            [_vm._v("Empezar")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
               _c(
-                "a",
+                "svg",
                 {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function ($event) {
-                      return _vm.Create_Membership()
-                    },
+                  attrs: {
+                    width: "24",
+                    height: "24",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg",
                   },
                 },
-                [_vm._v("Obtener")]
+                [
+                  _c("path", {
+                    attrs: {
+                      d: "M16.75 17.5h-9a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5Z",
+                      fill: "currentColor",
+                    },
+                  }),
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      "clip-rule": "evenodd",
+                      d: "M12.98 6.81a1.5 1.5 0 1 0-1.46.001c-.762 2.086-1.588 3.109-2.353 3.194-.862.095-1.613-.28-2.32-1.21a.807.807 0 0 0-.145-.147 1.5 1.5 0 1 0-1.204.602c0 .058.009.12.024.182l1.216 4.864A2.25 2.25 0 0 0 8.921 16h6.658a2.25 2.25 0 0 0 2.183-1.704l1.216-4.864a.81.81 0 0 0 .024-.182 1.5 1.5 0 1 0-1.203-.602.806.806 0 0 0-.136.135c-.743.935-1.5 1.314-2.33 1.222-.73-.082-1.56-1.108-2.353-3.194Z",
+                      fill: "currentColor",
+                    },
+                  }),
+                ]
+              ),
+              _vm._v(" Premium"),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(
+                "Ideal para personas y equipos que estan iniciando con canva"
               ),
             ]),
+            _vm._v(" "),
+            _vm._m(9),
+            _c("p", [_vm._v("Gratis para siempre")]),
+            _vm._v(" "),
+            _c("p"),
+            _vm._v(" "),
+            _vm._m(10),
+            _vm._v(" "),
+            _vm._m(11),
+            _vm._v(" "),
+            _vm._m(12),
+            _vm._v(" "),
+            _vm._m(13),
+            _vm._v(" "),
+            _vm._m(14),
+            _vm._v(" "),
+            _vm._m(15),
+            _vm._v(" "),
+            _vm._m(16),
+            _vm._v(" "),
+            _vm._m(17),
           ]),
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-sm-4", staticStyle: { "margin-top": "26px" } },
-        [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Membresia 3")]),
-              _vm._v(" "),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              on: {
+                click: function ($event) {
+                  return _vm.Create_Membership()
+                },
+              },
+            },
+            [_vm._v("Empezar")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
               _c(
-                "a",
+                "svg",
                 {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function ($event) {
-                      return _vm.Create_Membership()
-                    },
+                  attrs: {
+                    width: "24",
+                    height: "24",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg",
                   },
                 },
-                [_vm._v("Obtener")]
+                [
+                  _c("path", {
+                    attrs: {
+                      d: "M16.75 17.5h-9a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5Z",
+                      fill: "currentColor",
+                    },
+                  }),
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      "clip-rule": "evenodd",
+                      d: "M12.98 6.81a1.5 1.5 0 1 0-1.46.001c-.762 2.086-1.588 3.109-2.353 3.194-.862.095-1.613-.28-2.32-1.21a.807.807 0 0 0-.145-.147 1.5 1.5 0 1 0-1.204.602c0 .058.009.12.024.182l1.216 4.864A2.25 2.25 0 0 0 8.921 16h6.658a2.25 2.25 0 0 0 2.183-1.704l1.216-4.864a.81.81 0 0 0 .024-.182 1.5 1.5 0 1 0-1.203-.602.806.806 0 0 0-.136.135c-.743.935-1.5 1.314-2.33 1.222-.73-.082-1.56-1.108-2.353-3.194Z",
+                      fill: "currentColor",
+                    },
+                  }),
+                ]
+              ),
+              _vm._v(" Gold"),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(
+                "Ideal para personas y equipos que estan iniciando con canva"
               ),
             ]),
+            _vm._v(" "),
+            _vm._m(18),
+            _c("p", [_vm._v("Gratis para siempre")]),
+            _vm._v(" "),
+            _c("p"),
+            _vm._v(" "),
+            _vm._m(19),
+            _vm._v(" "),
+            _vm._m(20),
+            _vm._v(" "),
+            _vm._m(21),
+            _vm._v(" "),
+            _vm._m(22),
+            _vm._v(" "),
+            _vm._m(23),
+            _vm._v(" "),
+            _vm._m(24),
+            _vm._v(" "),
+            _vm._m(25),
+            _vm._v(" "),
+            _vm._m(26),
           ]),
-        ]
-      ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              on: {
+                click: function ($event) {
+                  return _vm.Create_Membership()
+                },
+              },
+            },
+            [_vm._v("Empezar")]
+          ),
+        ]),
+      ]),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "card-text" }, [
+      _c("small", { staticClass: "text-muted" }, [_c("h2", [_vm._v("0 S/")])]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "card-text" }, [
+      _c("small", { staticClass: "text-muted" }, [_c("h2", [_vm._v("0 S/")])]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "card-text" }, [
+      _c("small", { staticClass: "text-muted" }, [_c("h2", [_vm._v("0 S/")])]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-check" }),
+      _vm._v("Más de 250.000 plantillas gratis"),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -56421,6 +56900,10 @@ var render = function () {
                       _c("img", {
                         attrs: { src: "icon_category/" + data.categories_url },
                       }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "" } }, [
+                        _vm._v(_vm._s(data.categories_name)),
+                      ]),
                     ])
                   }),
                   0
@@ -73178,7 +73661,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _membership_vue_vue_type_template_id_4a5b181f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./membership.vue?vue&type=template&id=4a5b181f& */ "./resources/js/components/user/membership.vue?vue&type=template&id=4a5b181f&");
 /* harmony import */ var _membership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./membership.vue?vue&type=script&lang=js& */ "./resources/js/components/user/membership.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _membership_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./membership.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -73186,7 +73671,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _membership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _membership_vue_vue_type_template_id_4a5b181f___WEBPACK_IMPORTED_MODULE_0__["render"],
   _membership_vue_vue_type_template_id_4a5b181f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -73215,6 +73700,22 @@ component.options.__file = "resources/js/components/user/membership.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./membership.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user/membership.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./membership.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/user/membership.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_membership_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 

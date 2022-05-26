@@ -18,6 +18,7 @@
                             <ul>
                                 <li v-for="data in categories">
                                     <img :src="'icon_category/'+data.categories_url">
+                                    <label for="">{{data.categories_name }}</label>
                                 </li>
                             </ul>
                         </div>
@@ -146,6 +147,11 @@
         padding: 10px;
         transition: 1s;
 
+    }
+
+    #icon label{
+        color: #ffffff;
+        font-size: 12px;
     }
 
     @media screen and (min-width: 20em) {
