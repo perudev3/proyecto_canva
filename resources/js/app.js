@@ -29,6 +29,12 @@ const routes = [
     },
 
     {
+        path: '/category',
+        name: 'category',
+        component: require('./components/admin/category.vue').default
+    },
+
+    {
         path: '/membership',
         name: 'membership',
         component: require('./components/user/membership.vue').default

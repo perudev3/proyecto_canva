@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\files;
 
-class AdminController extends Controller
-{
+class PublishController extends Controller
+{   
+    
     public function index()
     {
         if (session('user')->roles_id==1) {
@@ -32,9 +33,11 @@ class AdminController extends Controller
             $file_name = 'file-'.Str::uuid()->toString().'.'.$file->getClientOriginalExtension();
             $portada_name = 'portada-'.Str::uuid()->toString().'.'.$portada->getClientOriginalExtension();
             $files = files::create([
+                'categories_id' => $request->categories_id,
                 'files_name' => $request->name,
                 'files_url'=> $file_name,
                 'files_portada' => $portada_name,
+                'publish_content' => $request->content,
                 'files_status' => 1,
             ]);
 
@@ -51,6 +54,5 @@ class AdminController extends Controller
             return 'no authorization';
         }
     }
-
 
 }

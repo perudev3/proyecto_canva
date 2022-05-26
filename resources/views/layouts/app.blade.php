@@ -155,20 +155,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('home') }}">{{ __('Home') }}</a>
-                            </li>       
-                            @if(session('user')->roles_id == 1)                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('files') }}">{{ __('Files') }}</a>
-                            </li>
-                            @endif()
-                            @if(session('user')->roles_id == 2)                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('my_files') }}">{{ __('My Favoritos') }}</a>
-                            </li>
-                            @endif()
+                        @else   
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fas fa-user" style="font-size: 25px;left:5px;"></i>
@@ -207,11 +194,26 @@
 
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#">Portfolio</a>
+                        <a href="{{ url('home') }}"> <i class="fa fa-home"></i> Home</a>
                     </li>
+                    @if(session('user')->roles_id == 1) 
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Item 1</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="{{ url('category') }}">Categorias</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('files') }}">Publicar</a>
+                            </li>
+                        </ul>
                     </li>
+                    @endif
+                    @if(session('user')->roles_id == 2)                            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('My Favoritos') }}</a>
+                        </li>
+                    @endif()
                 </ul>
             </nav>
             <main class="py-4">

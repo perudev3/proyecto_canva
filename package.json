@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "sweetalert2": "^11.4.14",
-        "vue-router": "^3.5.3"
+        "vue-router": "^3.5.3",
+        "vue2-editor": "^2.10.3"
     }
 }

@@ -20,12 +20,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('get/files', 'AdminController@get_files');
+Route::get('get/files', 'PublishController@get_files');
+Route::get('get/categories', 'CategoryController@get_categories');
 
 Route::group(['middleware' => 'auth'], function () {
     // User Admin
-    Route::get('/files', 'AdminController@index');
-    Route::post('create/files', 'AdminController@upload_files');
+    Route::get('/files', 'PublishController@index');
+    Route::post('create/files', 'PublishController@upload_files');
+
+    Route::get('/category', 'CategoryController@index');
+    Route::post('create/category', 'CategoryController@upload_categories');
 
     // User
     Route::get('/my_files', 'UserController@index');
