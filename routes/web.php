@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('get/files', 'PublishController@get_files');
 Route::get('get/categories', 'CategoryController@get_categories');
+Route::post('search/files', 'PublishController@search_files');
 
 Route::group(['middleware' => 'auth'], function () {
     // User Admin

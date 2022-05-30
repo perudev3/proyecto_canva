@@ -14,20 +14,18 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&display=swap" rel="stylesheet">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <style>
 
-        *{
-            font-family: 'Open Sans', sans-serif !important;
-        }
+    <style>
         .navbar{
             padding-top:22px;
         }
@@ -41,6 +39,8 @@
             min-width: 250px;
             max-width: 250px;
             min-height: 100vh;
+            overflow: scroll;
+            overflow-x: auto;
         }
 
         #siderbar a{
@@ -114,11 +114,11 @@
             background: #c7c6c6;
             border-radius: 46px;
             height: 38px;
-            width: 37px;
+            width: 100%;
         }
     </style>
 </head>
-<body>
+<body style="background: #ffffff !important;">
     <div id="app">
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -158,10 +158,17 @@
                         @else   
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fas fa-user" style="font-size: 25px;left:5px;"></i>
+                                    <i class="fas fa-user" style="font-size: 25px;left:5px;background: #ffff;padding: 3px;border-radius: 18px;"></i> {{Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a href="#" class="dropdown-item">Mi Perfil</a>
+                                    <hr>
+                                    <a href="#" class="dropdown-item">Item</a>
+                                    <a href="#" class="dropdown-item">Item</a>
+                                    <a href="#" class="dropdown-item">Item</a>
+                                    <a href="#" class="dropdown-item">Item</a>
+                                    <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -209,9 +216,32 @@
                         </ul>
                     </li>
                     @endif
-                    @if(session('user')->roles_id == 2)                            
+                    @if(session('user')->roles_id == 2) 
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Item 1</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="#">item</a>
+                                </li>
+                                <li>
+                                    <a href="#">item</a>
+                                </li>
+                            </ul>
+                        </li>                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('My Favoritos') }}</a>
+                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
                         </li>
                     @endif()
                 </ul>
@@ -232,6 +262,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!--carousel Owl-->
+    <script defer src="{{ asset('js/owl.carousel.min.js') }}"></script>    
     <script>
         $(document).ready(function () {
 

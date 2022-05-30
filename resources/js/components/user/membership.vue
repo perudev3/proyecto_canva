@@ -20,7 +20,7 @@
                                 <p><i class="fa fa-check"></i>Más de 250.000 plantillas gratis</p>
                                 <p><i class="fa fa-check"></i>Más de 250.000 plantillas gratis</p>
                             </div>
-                            <button class="btn btn-success" @click="Create_Membership()">Empezar</button>
+                            <button style="background:#8b3dff;border-color:#8b3dff;" class="btn btn-success" @click="Create_Membership()">Empezar</button>
                         </div>
                         <div class="card">
                             <div class="card-body">
@@ -39,7 +39,7 @@
                                 <p><i class="fa fa-check"></i>Más de 250.000 plantillas gratis</p>
                                 <p><i class="fa fa-check"></i>Más de 250.000 plantillas gratis</p>
                             </div>
-                            <button class="btn btn-success" @click="Create_Membership()">Empezar</button>
+                            <button style="background:#8b3dff;border-color:#8b3dff;" class="btn btn-success" @click="Create_Membership()">Empezar</button>
                         </div>
                         <div class="card">
                             <div class="card-body">
@@ -58,7 +58,7 @@
                                 <p><i class="fa fa-check"></i>Más de 250.000 plantillas gratis</p>
                                 <p><i class="fa fa-check"></i>Más de 250.000 plantillas gratis</p>
                             </div>
-                            <button class="btn btn-success" @click="Create_Membership()">Empezar</button>
+                            <button style="background:#8b3dff;border-color:#8b3dff;" class="btn btn-success" @click="Create_Membership()">Empezar</button>
                         </div>
                     </div>
                 </div>

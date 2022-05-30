@@ -25,7 +25,10 @@
     },
     "dependencies": {
         "sweetalert2": "^11.4.14",
+        "vue-owl-carousel": "^2.0.3",
         "vue-router": "^3.5.3",
+        "vue-slick-carousel": "^1.0.6",
+        "vue-spinner": "^1.0.4",
         "vue2-editor": "^2.10.3"
     }
 }

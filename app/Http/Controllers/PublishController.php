@@ -55,4 +55,9 @@ class PublishController extends Controller
         }
     }
 
+    public function search_files(Request $request)
+    {
+        return files::where('categories_id', $request->categories_id)->get();
+    }
+
 }

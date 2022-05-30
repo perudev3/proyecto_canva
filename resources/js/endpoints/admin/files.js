@@ -2,6 +2,7 @@ import API from "../../api/API";
 
 const END_POINT_CREATE = 'create/files';
 const END_POINT_GET = 'get/files';
+const END_POINT_SEARCH = 'search/files';
 
 export default {
 
@@ -16,6 +17,10 @@ export default {
             }
         })
     },
+
+    SearchFiles(data){
+        return API.post(END_POINT_SEARCH, data)
+    }
 
     
 }
