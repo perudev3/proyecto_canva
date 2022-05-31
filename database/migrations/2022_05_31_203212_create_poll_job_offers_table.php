@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class CreatePollJobOffersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->increments('categories_id');
-            $table->LongText('categories_name')->nullable();
-            $table->integer('categories_status')->nullable();
+        Schema::create('poll_job_offers', function (Blueprint $table) {
+            $table->increments('poll_job_offer_id');
+            $table->LongText('poll_job_offer_question')->nullable();
+            $table->integer('job_offer_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('poll_job_offers');
     }
 }

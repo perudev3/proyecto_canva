@@ -8,7 +8,6 @@ class category extends Model
 {
     protected $fillable = [
         'categories_name',
-        'categories_url',
         'categories_status',
     ];
 

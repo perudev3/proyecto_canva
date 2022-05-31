@@ -14,14 +14,10 @@ class CreateFilesTable extends Migration
     public function up()
     {
         Schema::create('files', function (Blueprint $table) {
-            $table->increments('files_id');
-            $table->integer('categories_id')->nullable();
-            $table->LongText('files_name')->nullable();
-            $table->LongText('files_url')->nullable();
-            $table->date('files_date')->nullable();
-            $table->LongText('files_portada')->nullable();
-            $table->LongText('publish_content')->nullable();
-            $table->integer('files_status')->nullable();
+            $table->increments('file_id');
+            $table->integer('binder_id')->nullable();
+            $table->date('file_date')->nullable();
+            $table->integer('file_status')->nullable();
             $table->timestamps();
         });
     }

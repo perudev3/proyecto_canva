@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilesUserMembershipsTable extends Migration
+class CreateMembreshipUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateFilesUserMembershipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('files_user_memberships', function (Blueprint $table) {
-            $table->increments('files_user_memberships_id');
+        Schema::create('membreship_users', function (Blueprint $table) {
+            $table->increments('membership_user_id');
+            $table->integer('membership_id')->nullable();
             $table->integer('user_id')->nullable();
-            $table->integer('files_id')->nullable();
-            $table->integer('status')->nullable();
+            $table->date('membership_user_date')->nullable();
+            $table->integer('membership_user_status')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateFilesUserMembershipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('files_user_memberships');
+        Schema::dropIfExists('membreship_users');
     }
 }
