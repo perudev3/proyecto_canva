@@ -2,7 +2,7 @@
         <div>
             <div class="container" style="margin-top:38px;margin-bottom: 52px;">
                 <div class="row">
-                    <div class="col-sm-12" style="background: -webkit-linear-gradient(110deg, rgb(126, 54, 228) 10%, rgb(110, 209, 419) 66%);border-radius: 17px;padding: 0px;padding-top: 0px;">
+                    <div class="col-sm-12" style="background: -webkit-linear-gradient(110deg, rgb(126, 54, 228) 10%, rgb(110, 209, 419) 66%);border-radius: 17px;padding: 28px;padding-top: 0px;">
                         <div id="div-search" align="center">
                             <h2>¿Qué Buscas?</h2>
                             <div class="input-group">
@@ -14,30 +14,7 @@
                                 <input type="text" class="form-control" placeholder="Buscar..." id="input-search">                                
                             </div>                            
                         </div>
-                        <div class="col-sm-12" align="center">
-                            <ul id="lista1">
-                                 <li v-for="data in categories">
-                                    <img :src="'icon_category/'+data.categories_url" @click="Search_Files(data.categories_id)">
-                                                          
-                                 </li>
-                            </ul>
-                        </div>
                        
-                        <div class="col-ms-12" id="data_categorias">
-                            <div class="owl-carousel owl-theme" style="background:transparent">
-                                    <div class="item" v-for="data in files" style="margin-top: 26px;">   
-                                        <div class="card">
-                                            <img :src="'portada/'+data.files_portada" class="card-img-top">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{ data.files_name }}</h5>
-                                                <template v-if="user==null">
-                                                    <a href="/login" class="btn btn-primary">Login</a>
-                                                </template>                                
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
                     </div>                    
                 </div>
             </div>

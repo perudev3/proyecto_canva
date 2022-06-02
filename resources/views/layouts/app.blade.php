@@ -116,6 +116,23 @@
             height: 38px;
             width: 100%;
         }
+
+        ul #pageSubmenu{
+            margin:20px;
+        }
+
+        ul #pageSubmenu li{
+            background: #221e1e;
+            border-radius: 10px;
+        }
+
+        ul #pageSubmenu a:hover{
+            color: #fcfcff !important;
+        }
+
+        ul #pageSubmenu a{
+            color: #ffffff;
+        }
     </style>
 </head>
 <body style="background: #ffffff !important;">
@@ -205,13 +222,10 @@
                     </li>
                     @if(session('user')->roles_id == 1) 
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Item 1</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user-edit"></i> Registrar</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu" >
                             <li>
-                                <a href="{{ url('category') }}">Categorias</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('files') }}">Publicar</a>
+                                <a href="{{ url('category') }}"> <i class="fas fa-clipboard-list"></i> Categorias</a>
                             </li>
                         </ul>
                     </li>
