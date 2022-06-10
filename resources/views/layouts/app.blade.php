@@ -179,7 +179,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="#" class="dropdown-item">Mi Perfil</a>
+                                    <a href="{{url('my_profile')}}" class="dropdown-item">Mi Perfil</a>
                                     <hr>
                                     <a href="#" class="dropdown-item">Item</a>
                                     <a href="#" class="dropdown-item">Item</a>
@@ -203,7 +203,7 @@
             </div>
         </nav>
         @guest
-        <main class="py-4">
+        <main class="container">
             @yield('content')
         </main>
         @endguest
@@ -221,46 +221,37 @@
                         <a href="{{ url('home') }}"> <i class="fa fa-home"></i> Home</a>
                     </li>
                     @if(session('user')->roles_id == 1) 
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user-edit"></i> Registrar</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu" >
-                            <li>
-                                <a href="{{ url('category') }}"> <i class="fas fa-clipboard-list"></i> Categorias</a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-user-edit"></i> Registrar</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu" >
+                                <li>
+                                    <a href="{{ url('category') }}"> <i class="fas fa-clipboard-list"></i> Categorias</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('binders') }}"> <i class="fas fa-clipboard-list"></i> Carpetas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ url('membership') }}"> <i class="fas fa-clipboard-list"></i> Membresías</a>
+                        </li>
                     @endif
                     @if(session('user')->roles_id == 2) 
                         <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Item 1</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="#">item</a>
-                                </li>
-                                <li>
-                                    <a href="#">item</a>
-                                </li>
-                            </ul>
-                        </li>                         
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('my_files') }}">{{ __('Item') }}</a>
-                        </li>
+                            <a href="#"> <i class="fas fa-clipboard-list"></i> Mis Postulaciones</a>
+                        </li>                                
                     @endif()
+                    @if(session('user')->roles_id == 3) 
+                    <li>
+                        <a href="{{ url('my_binders') }}"> <i class="fas fa-clipboard-list"></i> Mis Carpetas</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('pubish_job_offer') }}"> <i class="fas fa-clipboard-list"></i> Publicar</a>
+                    </li>
+                    @endif
                 </ul>
             </nav>
-            <main class="py-4">
+            <main class="container" style="margin-top:50px;">
                 @yield('content')
             </main>
         </div>

@@ -1,13 +1,12 @@
 import API from "../../api/API";
 
 const END_POINT_CREATE = 'create/files';
-const END_POINT_GET = 'get/files';
-const END_POINT_SEARCH = 'search/files';
+const END_POINT_POST = 'get_files';
 
 export default {
 
-    GetFiles(){
-        return API.get(END_POINT_GET)
+    GetFiles(binder_id){
+        return API.post(END_POINT_POST,{ 'binder_id' : binder_id})
     },
 
     CreateFile(data) {

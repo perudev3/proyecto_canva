@@ -8,6 +8,7 @@ class membreship extends Model
 {
     protected $fillable = [
         'membership_name',
+        'membership_description',
         'membership_price',
         'membership_status'
     ];

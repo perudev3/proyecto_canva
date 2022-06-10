@@ -23,9 +23,9 @@ const routes = [
     },
 
     {
-        path: '/files',
-        name: 'files',
-        component: require('./components/admin/files.vue').default
+        path: '/pubish_job_offer',
+        name: 'pubish_job_offer',
+        component: require('./components/user/job_officer.vue').default
     },
 
     {
@@ -35,8 +35,33 @@ const routes = [
     },
 
     {
+        path: '/binders',
+        name: 'binders',
+        component: require('./components/admin/binder.vue').default
+    },
+
+    {
+        path: '/my_profile',
+        name: 'my_profile',
+        component: require('./components/user/profile.vue').default
+    },
+
+    {
+        path: '/my_binders',
+        name: 'my_binders',
+        component: require('./components/user/my_binders.vue').default
+    },
+
+
+    {
         path: '/membership',
         name: 'membership',
+        component: require('./components/admin/membership.vue').default
+    },
+
+    {
+        path: '/suscription_membership',
+        name: 'suscription_membership',
         component: require('./components/user/membership.vue').default
     },
 

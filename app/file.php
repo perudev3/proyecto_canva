@@ -8,6 +8,7 @@ class file extends Model
 {
     protected $fillable = [
         'binder_id',
+        'file_url',
         'file_date',
         'file_status',
     ];

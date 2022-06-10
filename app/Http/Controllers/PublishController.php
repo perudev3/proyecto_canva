@@ -4,47 +4,41 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\files;
+use Carbon\Carbon;
+use App\job_offer;
 
 class PublishController extends Controller
 {   
     
     public function index()
     {
-        if (session('user')->roles_id==1) {
-            return view('admin.files');
+        if (session('user')->roles_id==3) {
+            return view('user.job_offer');
         }else{
             return 'no authorization';
         }
         
     }
 
-    public function get_files()
+    public function get_jobs_offers()
     {
-        return files::all();
+        return job_offer::where('user_id', session('user')->id)->get();
     }
 
-    public function upload_files(Request $request)
+    public function post_job_offer(Request $request)
     {
-        if (session('user')->roles_id==1) {
-            $file = $request->file('file');
-            $portada = $request->file('portada');
-
-            $file_name = 'file-'.Str::uuid()->toString().'.'.$file->getClientOriginalExtension();
-            $portada_name = 'portada-'.Str::uuid()->toString().'.'.$portada->getClientOriginalExtension();
-            $files = files::create([
-                'categories_id' => $request->categories_id,
-                'files_name' => $request->name,
-                'files_url'=> $file_name,
-                'files_portada' => $portada_name,
-                'publish_content' => $request->content,
-                'files_status' => 1,
+        $fecha =  date('Y-m-d');
+        if (session('user')->roles_id==3) {
+            $job_offer = job_offer::create([
+                'job_offer_name' =>  $request->job_offer_name,
+                'job_offer_description' =>  $request->job_offer_description,
+                'user_id' =>  session('user')->id,
+                'job_offer_date' =>  $fecha,
+                'job_offer_finished' =>  $request->job_offer_finished,
+                'job_offer_status' =>  1,
             ]);
 
-            $file->move(public_path().'/file',$file_name);
-            $portada->move(public_path().'/portada',$portada_name);
-
-            if ($files) {
+            if ($job_offer) {
                 return ['status' => 200 , 'message'=>'Se subió correctamente'];
             }else{
                 return ['status' => 401 , 'message'=>'No se subió el archivo'];

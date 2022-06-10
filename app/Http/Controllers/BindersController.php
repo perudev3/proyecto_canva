@@ -3,35 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use App\category;
+use Carbon\Carbon;
+use App\binder;
 
-class CategoryController extends Controller
+class BindersController extends Controller
 {
     public function index()
     {
         if (session('user')->roles_id==1) {
-            return view('admin.category');
+            return view('admin.binder');
         }else{
             return 'no authorization';
         }
     }
 
-    public function get_categories()
+    public function get_binders()
     {
-        return category::all();
+        return binder::with('empresas')->get();
     }
 
-    public function create_categories(Request $request)
+    public function create_binders(Request $request)
     {
+        $fecha =  date('Y-m-d');
         if (session('user')->roles_id==1) {
 
-            $category = category::create([
-                'categories_name' => $request->name,
-                'categories_status' => 1,
+            $binder = binder::create([
+                'binder_name' => $request->name,
+                'binder_date' => $fecha,
+                'user_id' => $request->user_id,
+                'binder_status' => 1,
             ]);
 
-            if ($category) {
+            if ($binder) {
                 return ['status' => 200 , 'message'=>'Se subió correctamente'];
             }else{
                 return ['status' => 401 , 'message'=>'No se subió el archivo'];
@@ -41,5 +44,4 @@ class CategoryController extends Controller
             return 'no authorization';
         }
     }
-
 }

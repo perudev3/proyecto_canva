@@ -14,4 +14,9 @@ class binder extends Model
     ];
 
     protected $primaryKey ="binder_id";
+
+    public function empresas()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
 }

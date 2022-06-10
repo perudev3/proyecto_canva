@@ -16,4 +16,9 @@ class job_offer extends Model
     ];
 
     protected $primaryKey ="job_offer_id";
+
+    public function empresa()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id')->where('roles_id', 3);
+    }
 }

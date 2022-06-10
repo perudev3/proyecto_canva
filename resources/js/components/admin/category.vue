@@ -1,9 +1,18 @@
 <template>
-    <div class="row">
+
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="container">
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Categories</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="container" style="background: #f9f5f5;padding: 10px;border-radius: 9px;">
                         <div class="form-group row">
                             <label for="inputvehiculo" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-10">
@@ -12,57 +21,36 @@
                         </div>
                     
                         <div class="form-group row">
-                            <label for="inputmodelo" class="col-sm-2 col-form-label">Icon</label>
                             <div class="col-sm-10">
-                            <input name="modelo" type="file" class="form-control" v-on:change="file">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <button type="button" @click="Upload()" class="btn btn-primary">Subir <i class="fa fa-upload"></i> </button>
+                            <button type="button" @click="RegisterCategory()" class="btn btn-primary"><i class="fa fa-check"></i> Registrar  </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                        <table class="table">
+                <div class="col-md-7">
+                        <table class="table" style="background: #f7f7f7;border-radius: 10px;">
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Option</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                                <tr v-for="data in categories">
+                                    <th scope="row">{{ data.categories_id }}</th>
+                                    <td>{{  data.categories_name }}</td>
+                                    <td>{{ data.categories_status==1 ? 'Activo' : 'Inactivo' }}</td>
+                                    <td>
+                                        <button class="btn btn-success"><i class="fas fa-edit"></i> Editar</button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                 </div>
             </div>
-            
-            
         </div>
-
-    </div>
 
 </template>
 
@@ -73,25 +61,28 @@
     import Category from '../../endpoints/admin/category'
 
     export default {
+
         data:function(){
             return {
                 name:'',
-                icon:'',
+                categories: [],
             }
         },
-
         methods: {
 
-            file(e){
-                this.icon = e.target.files[0];
+
+            DataCategory(){
+                Category.GetCategories().then( response => {
+                    this.categories = response.data;
+                    console.log(this.categories);
+                })
             },
 
-            Upload(){
+            RegisterCategory(){
                 let me = this;
                 let  data = new FormData()
                 
                 data.append("name", me.name)
-                data.append("url", me.icon)
 
                 Category.CreateCategory(data).then( response => {
                     console.log(response.data);
@@ -99,12 +90,18 @@
                         icon: 'success',
                         title: 'Exito',
                         text: response.data.message
-                    })
+                    });
+                    this.DataCategory();
                 })
                 .catch((error) => {
                     console.log(error);
                 });
             },
+        },
+
+        mounted(){
+            let me = this
+            me.DataCategory();
         }
     }
 

@@ -18,6 +18,23 @@
                     </div>                    
                 </div>
             </div>
+            <div class="container">
+                <div class="owl-carousel owl-theme" style="background:transparent">
+                    <div  class="item"  v-for="(data, index) in jobs" :key="index + 1" style="background:transparent">
+                        <div class="card" style="width:350px; height:280px; background:white; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);">
+                            <img class="card-img-top" src="" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ data.job_offer_name }}</h5>
+                                <p class="card-text">{{ data.empresa.name }}</p>
+                                <p class="card-text" v-html="$options.filters.truncate(data.job_offer_description)"></p>
+                                <template v-if="user==null">
+                                    <a href="/login"><button type="button" class="btn btn-success">Login</button></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
            <div class="container">
                 <div class="row" style="margin-bottom: 40px;">                                 
                     <div class="col-md-6">
@@ -99,6 +116,9 @@
     import File from '../endpoints/admin/files'
     import Category from '../endpoints/admin/category'
     import membresias from '../components/user/membership'
+    import jobsofficer from '../endpoints/user/job_officer'
+
+    
 
     export default {
 
@@ -108,14 +128,65 @@
             membresias
         },
 
+        filters: {
+            truncate: function (text, length) {
+                if (text.length > 100) {
+                    return text.substring(0, 90) + '...'
+                } else {
+                    return text
+                }
+            },
+        },
+
         data:function(){
             return {
                 files:[],
                 categories:[],
+                jobs:[],
             }
         },
 
         methods: {
+
+            Get_Jobs(){
+                jobsofficer.GetJobs().then( response => {
+                    this.jobs = response.data;
+                    this.$nextTick(() => {
+                            $('.owl-carousel').owlCarousel({
+                                nav: true,
+                                navText: [
+                                    "<i class='fa fa-chevron-left' style='color: black;font-size: 30px;'></i>",
+                                    "<i class='fa fa-chevron-right' style='color: black;font-size: 30px;'></i>"
+                                ],
+                                items: 1,
+                                loop: false,
+                                margin: 10,
+                                autoplayTimeout: 900,
+                                autoplayHoverPause: false,
+                                responsiveClass: false,
+                                responsive: {
+                                    0: {
+                                        items: 6,
+                                        nav: true
+                                    },
+                                    600: {
+                                        items: 6,
+                                        nav: true
+                                    },
+                                    1000: {
+                                        items: 6,
+                                        nav: true,
+                                        loop: false,
+                                        margin: 20
+                                    }
+                                }
+                            });            
+                    });
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+            },
 
             Get_Files(){
                 File.GetFiles().then( response => {
@@ -178,6 +249,7 @@
             let self = this
             self.Get_Files();
             self.GetCategories();
+            self.Get_Jobs();
         }
     }
 
@@ -344,6 +416,12 @@
 
     .owl-stage{
         width: 2144px !important;
+    }
+
+    #contenido_texto{
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow: ellipsis;
     }
 
 </style>

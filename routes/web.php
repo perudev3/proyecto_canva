@@ -20,20 +20,35 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('get/files', 'PublishController@get_files');
 Route::get('get/categories', 'CategoryController@get_categories');
-Route::post('search/files', 'PublishController@search_files');
+Route::get('get/binders', 'BindersController@get_binders');
+Route::get('get/membership', 'MembershipController@get_membership');
+Route::get('get/jobs_officer', 'UserController@get_officer_user');
 
 Route::group(['middleware' => 'auth'], function () {
     // User Admin
-    Route::get('/files', 'PublishController@index');
-    Route::post('create/files', 'PublishController@upload_files');
-
     Route::get('/category', 'CategoryController@index');
-    Route::post('create/category', 'CategoryController@upload_categories');
+    Route::post('create/category', 'CategoryController@create_categories');
 
-    // User
-    Route::get('/my_files', 'UserController@index');
+    Route::get('/binders', 'BindersController@index');
+    Route::post('create/binders', 'BindersController@create_binders');
+    Route::post('/get_files', 'FileController@get_files');
+    Route::get('/user_membership', 'UserController@get_user_membership');
+
     Route::get('/membership', 'MembershipController@index');
     Route::post('create/membership', 'MembershipController@create_membership');
+
+    // User
+    Route::get('/my_profile', 'UserController@my_profile');
+    
+
+    //Empresa
+    Route::get('/my_binders', 'UserController@my_binders');
+    Route::get('/get_binders_empresa', 'UserController@get_binders_empresa');
+    Route::post('/get_files_empresa', 'UserController@get_files_empresa');
+    Route::get('/pubish_job_offer', 'PublishController@index');
+    Route::get('/jobs_offers', 'PublishController@get_jobs_offers');    
+    Route::post('create/job_offer', 'PublishController@post_job_offer');
+    Route::get('suscription_membership', 'UserController@suscription_member');
+    Route::post('suscription_membership_empresa', 'UserController@post_suscription_membership');
 });
