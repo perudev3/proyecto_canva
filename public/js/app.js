@@ -77094,8 +77094,8 @@ var END_POINT_GET_FILE = 'get_files_empresa';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\proyecto_canva\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\proyecto_canva\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\proyecto_canva\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\proyecto_canva\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
