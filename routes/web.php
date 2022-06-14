@@ -29,17 +29,16 @@ Route::group(['middleware' => 'auth'], function () {
     // User Admin
     Route::get('/category', 'CategoryController@index');
     Route::post('create/category', 'CategoryController@create_categories');
-
     Route::get('/binders', 'BindersController@index');
     Route::post('create/binders', 'BindersController@create_binders');
     Route::post('/get_files', 'FileController@get_files');
     Route::get('/user_membership', 'UserController@get_user_membership');
-
     Route::get('/membership', 'MembershipController@index');
     Route::post('create/membership', 'MembershipController@create_membership');
 
     // User
     Route::get('/my_profile', 'UserController@my_profile');
+    Route::post('post/first_jobs_officer', 'UserController@first_jobs');
     
 
     //Empresa

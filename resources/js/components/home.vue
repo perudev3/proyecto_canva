@@ -59,13 +59,46 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">{{ jobs_info.job_offer_name  }}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                
+                                <div class="row">
+                                    <div class="col-md-6 modal-overflow">
+                                        <p class="card-text" v-html="jobs_info.job_offer_description"></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="container" style="background: #f9f5f5;padding: 10px;border-radius: 9px;">
+                                            <h5 class="modal-title" id="exampleModalLabel">POSTULACIÓN!!</h5>
+                                            <div class="form-group row">
+                                                <label for="inputvehiculo" class="col-sm-10 col-form-label">Nombres y Apellidos</label>
+                                                <div class="col-sm-10">
+                                                <input name="vehiculo" type="text" class="form-control" >
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputvehiculo" class="col-sm-10 col-form-label">Celular</label>
+                                                <div class="col-sm-10">
+                                                <input name="vehiculo" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputvehiculo" class="col-sm-10 col-form-label">E-mail</label>
+                                                <div class="col-sm-10">
+                                                <input name="vehiculo" type="email" class="form-control" >
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="form-group row">
+                                                <div class="col-sm-10">
+                                                    <button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Enviar  </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 
@@ -82,7 +115,7 @@
                                     <h5 class="card-title">{{ data.job_offer_name }}</h5>
                                     <p class="card-text">{{ data.empresa.name }}</p>
                                     <p class="card-text" v-html="$options.filters.truncate(data.job_offer_description)"></p>
-                                    <button type="button" class="btn btn-success" @click="Modal()">Postular</button>
+                                    <button type="button" class="btn btn-success" @click="Modal(data.job_offer_id)">Postular</button>
                                 </div>
                             </div>
                         </div>
@@ -113,6 +146,7 @@
                 files:[],
                 categories:[],
                 jobs:[],
+                jobs_info:[],
             }
         },
 
@@ -128,7 +162,11 @@
 
         methods: {
 
-            Modal(){
+            Modal(job_offer_id){
+                jobsofficer.GetFirstJob(job_offer_id).then(response => {
+                    this.jobs_info = response.data;
+                    console.log(response.data);
+                })
                 $('.modal').modal('show')
             },
 
@@ -249,6 +287,24 @@
 
     #icon-option span{
         font-size: 12px;
+    }
+
+    .modal-overflow{
+        width: 253px;
+        height: 368px;
+        overflow: scroll;
+        scrollbar-width: thin;
+    }
+
+    .modal-overflow::-webkit-scrollbar {
+        width: 8px;     /* Tamaño del scroll en vertical */
+        height: 8px;    /* Tamaño del scroll en horizontal */
+        display: none;  /* Ocultar scroll */
+    }
+
+    .modal-overflow::-webkit-scrollbar-thumb  {
+        background: #ccc;
+        border-radius: 4px;
     }
 
 </style>

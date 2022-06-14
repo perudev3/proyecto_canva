@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BinderEmail;
 use App\binder;
 
 class BindersController extends Controller
@@ -35,7 +37,10 @@ class BindersController extends Controller
             ]);
 
             if ($binder) {
-                return ['status' => 200 , 'message'=>'Se subió correctamente'];
+                $data = binder::with('empresas')->where('user_id', $binder->user_id)->where('binder_id', $binder->binder_id)->first();
+                Mail::to("rivasrivas506@gmail.com")->send(new BinderEmail($data));
+                return ['status' => 200 , 'message'=>'Se subió correctamente'];   
+                
             }else{
                 return ['status' => 401 , 'message'=>'No se subió el archivo'];
             }

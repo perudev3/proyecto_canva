@@ -3217,6 +3217,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3228,7 +3261,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       files: [],
       categories: [],
-      jobs: []
+      jobs: [],
+      jobs_info: []
     };
   },
   filters: {
@@ -3241,16 +3275,22 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    Modal: function Modal() {
+    Modal: function Modal(job_offer_id) {
+      var _this = this;
+
+      _endpoints_user_job_officer__WEBPACK_IMPORTED_MODULE_4__["default"].GetFirstJob(job_offer_id).then(function (response) {
+        _this.jobs_info = response.data;
+        console.log(response.data);
+      });
       $('.modal').modal('show');
     },
     Get_Jobs: function Get_Jobs() {
-      var _this = this;
+      var _this2 = this;
 
       _endpoints_user_job_officer__WEBPACK_IMPORTED_MODULE_4__["default"].GetJobs().then(function (response) {
-        _this.jobs = response.data;
+        _this2.jobs = response.data;
 
-        _this.$nextTick(function () {
+        _this2.$nextTick(function () {
           $('.owl-carousel').owlCarousel({
             nav: true,
             navText: ["<i class='fa fa-chevron-left' style='color: black;font-size: 30px;'></i>", "<i class='fa fa-chevron-right' style='color: black;font-size: 30px;'></i>"],
@@ -3283,10 +3323,10 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     Get_Files: function Get_Files() {
-      var _this2 = this;
+      var _this3 = this;
 
       _endpoints_admin_files__WEBPACK_IMPORTED_MODULE_2__["default"].GetFiles().then(function (response) {
-        _this2.files = response.data;
+        _this3.files = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -3326,12 +3366,12 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     Search_Files: function Search_Files(categories_id) {
-      var _this3 = this;
+      var _this4 = this;
 
       _endpoints_admin_files__WEBPACK_IMPORTED_MODULE_2__["default"].SearchFiles({
         'categories_id': categories_id
       }).then(function (response) {
-        _this3.files = response.data;
+        _this4.files = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -10394,7 +10434,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.fa-heart{\n    font-size: 24px;\n    color: #c5b9b9;\n}\n#icon-option span{\n    font-size: 12px;\n}\n\n", ""]);
+exports.push([module.i, "\n.fa-heart{\n    font-size: 24px;\n    color: #c5b9b9;\n}\n#icon-option span{\n    font-size: 12px;\n}\n.modal-overflow{\n    width: 253px;\n    height: 368px;\n    overflow: scroll;\n    scrollbar-width: thin;\n}\n.modal-overflow::-webkit-scrollbar {\n    width: 8px;     /* Tamaño del scroll en vertical */\n    height: 8px;    /* Tamaño del scroll en horizontal */\n    display: none;  /* Ocultar scroll */\n}\n.modal-overflow::-webkit-scrollbar-thumb  {\n    background: #ccc;\n    border-radius: 4px;\n}\n\n", ""]);
 
 // exports
 
@@ -58538,7 +58578,59 @@ var render = function () {
           _vm._v(" "),
           _vm.user.roles_id == 2
             ? [
-                _vm._m(4),
+                _c(
+                  "div",
+                  {
+                    staticClass: "modal fade bd-example-modal-lg",
+                    attrs: {
+                      tabindex: "-1",
+                      role: "dialog",
+                      "aria-labelledby": "myLargeModalLabel",
+                      "aria-hidden": "true",
+                    },
+                  },
+                  [
+                    _c("div", { staticClass: "modal-dialog modal-lg" }, [
+                      _c("div", { staticClass: "modal-content" }, [
+                        _c("div", { staticClass: "modal-header" }, [
+                          _c(
+                            "h5",
+                            {
+                              staticClass: "modal-title",
+                              attrs: { id: "exampleModalLabel" },
+                            },
+                            [_vm._v(_vm._s(_vm.jobs_info.job_offer_name))]
+                          ),
+                          _vm._v(" "),
+                          _vm._m(4),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-body" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col-md-6 modal-overflow" },
+                              [
+                                _c("p", {
+                                  staticClass: "card-text",
+                                  domProps: {
+                                    innerHTML: _vm._s(
+                                      _vm.jobs_info.job_offer_description
+                                    ),
+                                  },
+                                }),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _vm._m(5),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "modal-footer" }),
+                      ]),
+                    ]),
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "container" }, [
                   _c(
@@ -58601,7 +58693,7 @@ var render = function () {
                                     attrs: { type: "button" },
                                     on: {
                                       click: function ($event) {
-                                        return _vm.Modal()
+                                        return _vm.Modal(data.job_offer_id)
                                       },
                                     },
                                   },
@@ -58708,54 +58800,106 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "button",
       {
-        staticClass: "modal fade bd-example-modal-lg",
+        staticClass: "close",
         attrs: {
-          tabindex: "-1",
-          role: "dialog",
-          "aria-labelledby": "myLargeModalLabel",
-          "aria-hidden": "true",
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close",
         },
       },
-      [
-        _c("div", { staticClass: "modal-dialog modal-lg" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "h5",
-                {
-                  staticClass: "modal-title",
-                  attrs: { id: "exampleModalLabel" },
-                },
-                [_vm._v("New message")]
-              ),
-              _vm._v(" "),
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6" }, [
+      _c(
+        "div",
+        {
+          staticClass: "container",
+          staticStyle: {
+            background: "#f9f5f5",
+            padding: "10px",
+            "border-radius": "9px",
+          },
+        },
+        [
+          _c(
+            "h5",
+            { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+            [_vm._v("POSTULACIÓN!!")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row" }, [
+            _c(
+              "label",
+              {
+                staticClass: "col-sm-10 col-form-label",
+                attrs: { for: "inputvehiculo" },
+              },
+              [_vm._v("Nombres y Apellidos")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-10" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { name: "vehiculo", type: "text" },
+              }),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row" }, [
+            _c(
+              "label",
+              {
+                staticClass: "col-sm-10 col-form-label",
+                attrs: { for: "inputvehiculo" },
+              },
+              [_vm._v("Celular")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-10" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { name: "vehiculo", type: "text" },
+              }),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row" }, [
+            _c(
+              "label",
+              {
+                staticClass: "col-sm-10 col-form-label",
+                attrs: { for: "inputvehiculo" },
+              },
+              [_vm._v("E-mail")]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-10" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { name: "vehiculo", type: "email" },
+              }),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group row" }, [
+            _c("div", { staticClass: "col-sm-10" }, [
               _c(
                 "button",
-                {
-                  staticClass: "close",
-                  attrs: {
-                    type: "button",
-                    "data-dismiss": "modal",
-                    "aria-label": "Close",
-                  },
-                },
-                [
-                  _c("span", { attrs: { "aria-hidden": "true" } }, [
-                    _vm._v("×"),
-                  ]),
-                ]
+                { staticClass: "btn btn-primary", attrs: { type: "button" } },
+                [_c("i", { staticClass: "fa fa-check" }), _vm._v(" Enviar  ")]
               ),
             ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }),
           ]),
-        ]),
-      ]
-    )
+        ]
+      ),
+    ])
   },
 ]
 render._withStripped = true
@@ -76098,7 +76242,7 @@ __webpack_require__.r(__webpack_exports__);
 /**Ruta de la api que no requiere autenticacion por parte del cliente**/
 
 var Api = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: 'http://127.0.0.1:8000/',
+  baseURL: 'http://127.0.0.1:8081/',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -77011,6 +77155,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var END_POINT_CREATE = 'create/job_offer';
 var END_POINT_GET = 'get/jobs_officer';
+var END_POINT_POST = 'post/first_jobs_officer';
 /* harmony default export */ __webpack_exports__["default"] = ({
   CreateJobs: function CreateJobs(data) {
     return _api_API__WEBPACK_IMPORTED_MODULE_0__["default"].post(END_POINT_CREATE, data, {
@@ -77021,6 +77166,11 @@ var END_POINT_GET = 'get/jobs_officer';
   },
   GetJobs: function GetJobs() {
     return _api_API__WEBPACK_IMPORTED_MODULE_0__["default"].get(END_POINT_GET);
+  },
+  GetFirstJob: function GetFirstJob(job_offer_id) {
+    return _api_API__WEBPACK_IMPORTED_MODULE_0__["default"].post(END_POINT_POST, {
+      'job_offer_id': job_offer_id
+    });
   }
 });
 
