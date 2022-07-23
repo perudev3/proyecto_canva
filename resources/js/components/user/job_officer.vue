@@ -1,32 +1,36 @@
 <template>
-    <div class="container">
+    <form id="kt_modal_new_target_form" class="form fv-plugins-bootstrap5 fv-plugins-framework">
+		<div class="mb-13 text-center">
+			<h1 class="mb-3">Crear Oferta Laboral</h1>
+			<div class="text-muted fw-bold fs-5">Crea oportunidades para otros.</div>
+		</div>
+		<div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+			<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+				Nombre de la Oferta Laboral
+			</label>
+			<input type="text" class="form-control form-control-solid" v-model="job_offer_name">
+		    <div class="fv-plugins-message-container invalid-feedback"></div>
+        </div>
+        <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+			<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                Fecha de Finalización
+			</label>
+			<input type="date" class="form-control form-control-solid" v-model="job_offer_finished">
+		    <div class="fv-plugins-message-container invalid-feedback"></div>
+        </div>
+        <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+			<label class="d-flex align-items-center fs-6 fw-bold mb-2">
+				Descripcion del puesto
+			</label>
+            <vue-editor v-model="job_offer_description" class="form-control form-control-solid"></vue-editor>
+		    <div class="fv-plugins-message-container invalid-feedback"></div>
+        </div>
         <div class="form-group row">
-            <label for="inputvehiculo" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-            <input name="vehiculo" type="text" class="form-control" v-model="job_offer_name" >
+            <button type="button" @click="Crear()" class="btn btn-primary">Crear <i class="fa fa-list"></i> </button>
             </div>
         </div>
-
-        <div class="form-group row">
-            <label for="inputvehiculo" class="col-sm-2 col-form-label">Fecha de Finalización</label>
-            <div class="col-sm-10">
-            <input name="vehiculo" type="date" class="form-control" v-model="job_offer_finished" >
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="inputPuertas" class="col-sm-2 col-form-label">Descripción</label>
-            <div class="col-sm-10">
-            <vue-editor v-model="job_offer_description"></vue-editor>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col-sm-10">
-            <button type="button" @click="Upload()" class="btn btn-primary">Subir <i class="fa fa-upload"></i> </button>
-            </div>
-        </div>
-    </div>
+    </form>
 
 </template>
 
@@ -55,7 +59,7 @@
 
         methods: {
 
-            Upload(){
+            Crear(){
                 let me = this;
                 let  data = new FormData()
                 

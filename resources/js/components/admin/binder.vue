@@ -1,25 +1,30 @@
 <template>
 
     <div>
-        <div class="container">
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 class="modal-title" id="exampleModalLabel">{{binder_name}}</h5>
                         </div>
                         <div class="modal-body">
-                            <vue2Dropzone ref="file_url" id="dropzone"
-                                        :options="dropzoneOptions">
-                            </vue2Dropzone><br><br>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-4" v-for="data in files">
-                                        <img :src="'/file/'+data.file_url" style="width: 100%;">
+                                    <div class="col-md-6 col-lg-4 col-xl-6">
+                                        <vue2Dropzone ref="file_url" id="dropzone"
+                                            :options="dropzoneOptions">
+                                        </vue2Dropzone>
                                     </div>
+                                    <div class="col-md-6 col-lg-4 col-xl-6">
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-4 col-xl-3" v-for="data in files" :key="data.id">
+                                                <div class="symbol symbol-60px mb-5">
+                                                    <img src="/media/svg/files/pdf.svg"/>
+                                                </div>                                       
+                                            </div>
+                                        </div>
+                                        
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>
@@ -28,76 +33,128 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Binders</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="container" style="background: #f9f5f5;padding: 10px;border-radius: 9px;">
-                        <div class="form-group row">
-                            <label for="inputvehiculo" class="col-sm-2 col-form-label">Name</label>
-                            <div class="col-sm-10">
-                            <input name="vehiculo" type="text" class="form-control" v-model="name" >
+        </div>
+        <div class="mb-13 text-center">
+            <h1 class="mb-3">Crear Carpetas</h1>
+        </div>
+        <div class="post d-flex flex-column-fluid" id="kt_post">
+                <div id="kt_content_container" class="container-xxl">
+                    <div class="card card-flush">
+                        <div class="card-body pt-0">
+                            <div class="row" style="margin-top:50px;">
+                                    <div class="col-md-4">
+                                        <div class="container">
+                                            <form id="kt_modal_new_target_form" class="form fv-plugins-bootstrap5 fv-plugins-framework">
+                                                <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                        Nombre de la carpeta
+                                                    </label>
+                                                    <input type="text" class="form-control form-control-solid" v-model="name">
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                        Nombre de la agencia
+                                                    </label>
+                                                    <autocomplete :search="search"
+                                                        :get-result-value="getResultValue"
+                                                        class="form-control form-control-solid"
+                                                        @submit="onSubmit"
+                                                    ></autocomplete>
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                    <button type="button" @click="RegisterBinder()" class="btn btn-danger">
+                                                        Registrar <i class="fa fa-check"></i> </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div id="kt_ecommerce_sales_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer" id="kt_ecommerce_sales_table">
+                                                    <thead>
+                                                        <th class="text-center min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_sales_table" rowspan="1" colspan="1" aria-label="Order ID: activate to sort column ascending" style="width: 131.113px;"></th>
+                                                        <th class="text-center min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_sales_table" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 275.675px;">Carpeta</th>
+                                                        <th class="text-center min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_sales_table" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 275.675px;">Agencia</th>
+                                                        <th class="text-center min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_sales_table" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 100.425px;">Estado</th>
+                                                        <th class="text-center min-w-100px sorting" tabindex="0" aria-controls="kt_ecommerce_sales_table" rowspan="1" colspan="1" aria-label="Total: activate to sort column ascending" style="width: 131.113px;">Opciones</th>
+                                                    </thead>
+                                                    
+                                                    <tbody class="fw-bold text-gray-600">
+                                                                
+                                                        <tr class="odd" v-for="data in binders.data" :key="data.id">
+                                                            <td class="text-end">
+                                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    <i class="fas fa-folder"></i>
+                                                                </div>
+                                                                
+                                                            </td>	
+                                                            <td class="text-center">
+                                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    {{ data.binder_name }}
+                                                                </div>
+                                                                
+                                                            </td>	
+                                                            <td class="text-center">
+                                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    {{ data.empresas.name }}
+                                                                </div>
+                                                                
+                                                            </td>	
+                                                            <td class="text-center">
+                                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                    {{ data.binder_status==1 ? 'Activo' : 'Inactivo' }}
+                                                                </div>
+                                                                
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div class=" w-100 mw-170px" data-select2-id="select2-data-122-23fk">
+                                                                    <select class="form-control form-control-solid w-170px ps-14" @change="OptionChange($event)">
+                                                                        <template>
+                                                                            <option value="0">Seleccionar...</option>
+                                                                        </template>
+                                                                        <option :value="[1 , data.binder_id]">Subir</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
+                                                    <div class="dataTables_paginate paging_simple_numbers" id="kt_ecommerce_sales_table_paginate">
+                                                        <ul class="pagination">
+                                                            <li class="paginate_button page-item previous"  v-show="binders.prev_page_url" id="kt_ecommerce_sales_table_previous">
+                                                                <a href="#" aria-controls="kt_ecommerce_sales_table" @click.prevent="getPreviousPage" data-dt-idx="0" tabindex="0" class="page-link">
+                                                                    <i class="previous"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li class="paginate_button page-item" :class="{ 'active': (binders.current_page=== n) }" v-for="n in binders.last_page">
+                                                                <a href="#" @click.prevent="getPage(n)" aria-controls="kt_ecommerce_sales_table" data-dt-idx="1" tabindex="0" class="page-link">
+                                                                    {{ n }}
+                                                                </a>
+                                                            </li>
+                                                            <li class="paginate_button page-item next" v-show="binders.next_page_url" id="kt_ecommerce_sales_table_next">
+                                                                <a href="#" aria-controls="kt_ecommerce_sales_table" @click.prevent="getNextPage" data-dt-idx="6" tabindex="0" class="page-link">
+                                                                    <i class="next"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="inputvehiculo" class="col-sm-2 col-form-label">Name</label>
-                            <div class="col-sm-10">
-                                <autocomplete :search="search"
-                                                placeholder="Nombre del Producto"
-                                                :get-result-value="getResultValue"
-                                                @submit="onSubmit"
-                                                ></autocomplete>
-                            </div>
-                        </div>
-                    
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <button type="button" @click="RegisterBinder()" class="btn btn-primary"><i class="fa fa-check"></i> Registrar  </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="col-md-7">
-                        <table class="table" style="background: #f7f7f7;border-radius: 10px;">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Empresa</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Option</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="data in binders">
-                                    <th scope="row">
-                                        <i class="fas fa-folder"></i>
-                                    </th>
-                                    <td>{{  data.binder_name }}</td>
-                                    <td>{{  data.empresas.name }}</td>
-                                    <td>{{ data.binder_status==1 ? 'Activo' : 'Inactivo' }}</td>
-                                    <td>
-                                        <button class="btn btn-success" @click="ModalUpload(data.binder_id)">
-                                            <i class="fas fa-upload"></i> Subir 
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-success"><i class="fas fa-edit"></i> Editar</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                </div>
-            </div>
         </div>
     </div>
 </template>
@@ -126,6 +183,7 @@
                 user_id:'',
                 binders: [],
                 binder_id:'',
+                binder_name:'',
                 files:[],
                 dropzoneOptions: {
                     url: 'empresa/producto',
@@ -140,9 +198,15 @@
         },
         methods: {
 
+            OptionChange(event){
+                let dat = event.target.value.split(',')
+                if(dat[0]==1){
+                    this.ModalUpload(dat[1]);
+                }
+            },
+
             ModalUpload(binder_id){
                 File.GetFiles(binder_id).then( response => {
-                    console.log(response.data);
                     this.files = response.data;
                     this.binder_id = binder_id;
                 })
@@ -206,16 +270,34 @@
 
             onSubmit(result) {
 			    this.user_id=result.id;
-                console.log(this.user_id);
 		    },
 
 
             DataBinder(){
                 Binder.GetBinders().then( response => {
                     this.binders = response.data;
-                    console.log(this.binders);
                 })
             },
+
+            //Pagination//
+            getPage(page){
+                Binder.GetPageBinder(page).then((response)=>{
+                    this.binders = response.data;
+                });
+            },
+            getPreviousPage(){
+                axios.get(this.binders['prev_page_url']).then((response)=>{
+                    this.binders = response.data;
+                },(response)=>{
+                });
+            },
+            getNextPage(){
+                axios.get(this.binders['next_page_url']).then((response)=>{
+                    this.binders = response.data;
+                },(response)=>{
+                });
+            },
+            //End Pagination//
 
             RegisterBinder(){
                 let me = this;
@@ -248,3 +330,23 @@
 
 
 </script>
+
+<style scoped>
+.modal-overflow{
+        width: 253px;
+        height: 368px;
+        overflow: scroll;
+        scrollbar-width: thin;
+    }
+
+    .modal-overflow::-webkit-scrollbar {
+        width: 8px;     /* Tamaño del scroll en vertical */
+        height: 8px;    /* Tamaño del scroll en horizontal */
+        display: none;  /* Ocultar scroll */
+    }
+
+    .modal-overflow::-webkit-scrollbar-thumb  {
+        background: #ccc;
+        border-radius: 4px;
+    }
+</style>

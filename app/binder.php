@@ -19,4 +19,9 @@ class binder extends Model
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
+
+    public function files()
+    {
+        return $this->hasMany('App\file', 'binder_id', 'binder_id');
+    }
 }

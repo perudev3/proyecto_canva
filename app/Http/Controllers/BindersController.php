@@ -21,7 +21,7 @@ class BindersController extends Controller
 
     public function get_binders()
     {
-        return binder::with('empresas')->get();
+        return binder::with('empresas')->paginate(5);
     }
 
     public function create_binders(Request $request)

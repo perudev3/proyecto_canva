@@ -34,9 +34,9 @@ class FileController extends Controller
          }
  
          if ($file==true) {
-             return [ "status" => "success", "message" => "Material Creada con Exito"];
+             return [ "status" => "success", "message" => "Archivo subido con Exito"];
          }else{
-             return [ "status" => "error", "message" => "Error al Registrar el Material"];
+             return [ "status" => "error", "message" => "Error al subir el archivo"];
          }
      }
  

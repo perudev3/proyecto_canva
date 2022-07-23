@@ -16,6 +16,8 @@ class CreatePostulantJobOffersTable extends Migration
         Schema::create('postulant_job_offers', function (Blueprint $table) {
             $table->increments('postulant_job_offer_id');
             $table->integer('user_id')->nullable();
+            $table->integer('number_contact')->nullable();
+            $table->LongText('presentacion')->nullable();
             $table->integer('job_offer_id')->nullable();
             $table->date('postulant_job_offer_date')->nullable();
             $table->timestamps();

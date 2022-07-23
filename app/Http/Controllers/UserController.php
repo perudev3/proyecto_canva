@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\User;
 use App\binder;
 use App\file;
@@ -21,6 +22,11 @@ class UserController extends Controller
         return view('user.profile');
     }
 
+    public function get_data_user()
+    {
+        return User::where('id', session('user')->id)->first();
+    }
+
 
     public function my_binders()
     {
@@ -29,7 +35,7 @@ class UserController extends Controller
 
     public function get_binders_empresa()
     {
-       return binder::with('empresas')->where('user_id', session('user')->id)->get();
+       return binder::with('empresas', 'files')->where('user_id', session('user')->id)->get();
     }
     
     public function get_files_empresa(Request $request)
@@ -50,6 +56,36 @@ class UserController extends Controller
     public function suscription_member()
     {
         return view('user.suscription_membership');
+    }
+
+    public function update_photo(Request $request)
+    {
+        $photo = $request->file('url_photo');
+        $custom_name = 'photo-'.session('user')->id.'-'.Str::uuid()->toString().'.'.$photo->getClientOriginalExtension();
+        $user = User::where('id',session('user')->id)->update([
+            'url_photo' => $custom_name
+        ]);
+        $photo->move(public_path('photo'), $custom_name);   
+
+        if ($user == true) {
+            return [ "status" => "success", "message" => "Foto Actualizada"];
+        }else{
+            return [ "status" => "error", "message" => "No se pudo subir la foto"];
+        }
+    }
+
+    public function update_data(Request $request)
+    {
+        $user = User::where('id',session('user')->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+        ]);
+
+        if ($user == true) {
+            return [ "status" => "success", "message" => "Foto Actualizada"];
+        }else{
+            return [ "status" => "error", "message" => "No se pudo subir la foto"];
+        }
     }
 
     public function post_suscription_membership(Request $request)

@@ -1,5 +1,3 @@
-
-
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -26,6 +24,12 @@ const routes = [
         path: '/pubish_job_offer',
         name: 'pubish_job_offer',
         component: require('./components/user/job_officer.vue').default
+    },
+
+    {
+        path: '/list_job_offer',
+        name: 'list_job_offer',
+        component: require('./components/user/list_job_officer.vue').default
     },
 
     {

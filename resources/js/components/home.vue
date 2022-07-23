@@ -1,24 +1,13 @@
 <template>
-    <div class="container" style="max-width: 972px;position: absolute;right: 3%;">
+    <!-- <div class="container" style="max-width: 972px;position: absolute;right: 3%;">
         <div class="row">
             <div class="container" style="margin-top:-24px;margin-bottom: 52px;">
                 <div class="row">
-                    <div class="col-sm-12" style="background: -webkit-linear-gradient(110deg, rgb(126, 54, 228) 10%, rgb(110, 209, 419) 66%);border-radius: 17px;padding: 28px;padding-top: 0px;">
-                        <div id="div-search" align="center">
-                            <h2>¿Qué Buscas?</h2>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="fa fa-search"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Buscar..." id="input-search">                                
-                            </div>                            
-                        </div>        
+                    <div class="col-sm-12">   
                                     
                         <div class="col-ms-12" id="data_categorias">
                             <div class="owl-carousel owl-theme" style="background:transparent">
-                                    <div class="item" v-for="data in files" style="margin-top: 26px;">   
+                                    <div class="item" v-for="data in files" :key="data.id" style="margin-top: 26px;">   
                                         <div class="card">
                                             <img :src="'portada/'+data.files_portada" class="card-img-top">
                                             <div class="card-body">
@@ -90,6 +79,12 @@
                                                 <input name="vehiculo" type="email" class="form-control" >
                                                 </div>
                                             </div>
+                                             <div class="form-group row">
+                                                <label for="inputvehiculo" class="col-sm-10 col-form-label">Curriculum</label>
+                                                <div class="col-sm-10">
+                                                <input name="vehiculo" type="file" class="form-control" >
+                                                </div>
+                                            </div>
                                         
                                             <div class="form-group row">
                                                 <div class="col-sm-10">
@@ -110,7 +105,7 @@
                     <div class="owl-carousel owl-theme" style="background:transparent" >
                         <div  class="item"   v-for="(data, index) in jobs" :key="index + 1" style="background:transparent;">
                             <div class="card"  style="width:350px; height:280px; background:white; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);">
-                                <img class="card-img-top" src="" alt="Card image cap">
+                                <img class="card-img-top" :src="data.url_photo==null ? 'https://img.favpng.com/20/11/12/computer-icons-user-profile-png-favpng-0UAKKCpRRsMj5NaiELzw1pV7L.jpg' : 'photo/'+ data.url_photo"  alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ data.job_offer_name }}</h5>
                                     <p class="card-text">{{ data.empresa.name }}</p>
@@ -124,8 +119,9 @@
             </template>
 
         </div>
-    </div>
+    </div> -->
 
+    
 </template>
 
 
@@ -173,37 +169,6 @@
             Get_Jobs(){
                 jobsofficer.GetJobs().then( response => {
                     this.jobs = response.data;
-                    this.$nextTick(() => {
-                            $('.owl-carousel').owlCarousel({
-                                nav: true,
-                                navText: [
-                                    "<i class='fa fa-chevron-left' style='color: black;font-size: 30px;'></i>",
-                                    "<i class='fa fa-chevron-right' style='color: black;font-size: 30px;'></i>"
-                                ],
-                                items: 1,
-                                loop: false,
-                                margin: 10,
-                                autoplayTimeout: 900,
-                                autoplayHoverPause: false,
-                                responsiveClass: false,
-                                responsive: {
-                                    0: {
-                                        items: 6,
-                                        nav: true
-                                    },
-                                    600: {
-                                        items: 6,
-                                        nav: true
-                                    },
-                                    1000: {
-                                        items: 6,
-                                        nav: true,
-                                        loop: false,
-                                        margin: 20
-                                    }
-                                }
-                            });            
-                    });
                 })
                 .catch((error) => {
                     console.log(error);
@@ -222,37 +187,6 @@
                 let me = this
                 Category.GetCategories().then( response => {
                     me.categories = response.data;
-                    me.$nextTick(() => {
-                            $('.owl-carousel').owlCarousel({
-                                nav: true,
-                                navText: [
-                                    "<i class='fa fa-chevron-left' style='color: black;font-size: 30px;'></i>",
-                                    "<i class='fa fa-chevron-right' style='color: black;font-size: 30px;'></i>"
-                                ],
-                                items: 1,
-                                loop: false,
-                                margin: 10,
-                                autoplayTimeout: 900,
-                                autoplayHoverPause: false,
-                                responsiveClass: false,
-                                responsive: {
-                                    0: {
-                                        items: 1,
-                                        nav: true
-                                    },
-                                    600: {
-                                        items: 3,
-                                        nav: true
-                                    },
-                                    1000: {
-                                        items: 3,
-                                        nav: true,
-                                        loop: false,
-                                        margin: 20
-                                    }
-                                }
-                            });            
-                    });
                 })
             },
 

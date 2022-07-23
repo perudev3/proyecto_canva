@@ -3,6 +3,7 @@ import API from "../../api/API";
 const END_POINT_CREATE = 'create/job_offer';
 const END_POINT_GET = 'get/jobs_officer';
 const END_POINT_POST = 'post/first_jobs_officer';
+const END_POINT_GET_JOBS = 'jobs_offers';
 
 export default {
 
@@ -16,6 +17,10 @@ export default {
 
     GetJobs() {
         return API.get(END_POINT_GET)
+    },
+
+    GetJobsEmpresa() {
+        return API.get(END_POINT_GET_JOBS)
     },
 
     GetFirstJob(job_offer_id) {

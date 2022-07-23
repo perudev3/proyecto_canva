@@ -133,6 +133,23 @@
         ul #pageSubmenu a{
             color: #ffffff;
         }
+
+        #login{
+            background: whitesmoke;
+            border-radius: 5px;
+            padding: 2px;
+            margin-right: 11px;
+        }
+
+        #registro{
+            background: #8b3dff;
+            border-radius: 5px;
+            padding: 2px;
+        }
+
+        #registro a{
+            color: #fff;
+        }
     </style>
 </head>
 <body style="background: #ffffff !important;">
@@ -164,12 +181,12 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <li class="nav-item" id="login">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item" id="registro">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else   
@@ -180,11 +197,6 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a href="{{url('my_profile')}}" class="dropdown-item">Mi Perfil</a>
-                                    <hr>
-                                    <a href="#" class="dropdown-item">Item</a>
-                                    <a href="#" class="dropdown-item">Item</a>
-                                    <a href="#" class="dropdown-item">Item</a>
-                                    <a href="#" class="dropdown-item">Item</a>
                                     <hr>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

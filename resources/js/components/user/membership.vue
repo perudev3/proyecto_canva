@@ -1,20 +1,91 @@
 <template>
 
-            <div class="container" >
-                <div class="" >
-                    <div class="card-group">
-                        <div class="card" v-for="data in memberships">
-                            <div class="card-body">
-                                <h5 class="card-title"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.75 17.5h-9a.75.75 0 0 0 0 1.5h9a.75.75 0 0 0 0-1.5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.98 6.81a1.5 1.5 0 1 0-1.46.001c-.762 2.086-1.588 3.109-2.353 3.194-.862.095-1.613-.28-2.32-1.21a.807.807 0 0 0-.145-.147 1.5 1.5 0 1 0-1.204.602c0 .058.009.12.024.182l1.216 4.864A2.25 2.25 0 0 0 8.921 16h6.658a2.25 2.25 0 0 0 2.183-1.704l1.216-4.864a.81.81 0 0 0 .024-.182 1.5 1.5 0 1 0-1.203-.602.806.806 0 0 0-.136.135c-.743.935-1.5 1.314-2.33 1.222-.73-.082-1.56-1.108-2.353-3.194Z" fill="currentColor"></path></svg> {{ data.membership_name }}</h5>
-                                 <div v-html="data.membership_description"></div>
-                            </div>
-                            <button style="background:#8b3dff;border-color:#8b3dff;" class="btn btn-success" @click="Create_Membership()">
-                                 <h2>S/. {{ data.membership_price }} / Mes</h2>    <p>Empezar</p>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="mt-sm-n20" id="membresias">
+				<!--begin::Curve top-->
+				<div class="landing-curve landing-dark-color">
+					<svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z" fill="currentColor"></path>
+					</svg>
+				</div>
+				<!--end::Curve top-->
+				<!--begin::Wrapper-->
+				<div class="py-20 landing-dark-bg">
+					<!--begin::Container-->
+					<div class="container">
+						<!--begin::Plans-->
+						<div class="d-flex flex-column container pt-lg-20">
+							<!--begin::Heading-->
+							<div class="mb-13 text-center">
+								<h1 class="fs-2hx fw-bolder text-white mb-5" id="pricing" data-kt-scroll-offset="{default: 100, lg: 150}">Nuestras Membresías</h1>
+								<div class="text-gray-600 fw-bold fs-5">Marca la diferencia al postular, que tu imagen esté entre las primera</div>
+							</div>
+							<!--end::Heading-->
+							<!--begin::Pricing-->
+							<div class="text-center" id="kt_pricing">
+								<!--begin::Row-->
+								<div class="row g-10">
+									<!--begin::Col-->
+									<div class="col-xl-4" v-for="data in memberships" :key="data.id">
+										<div class="d-flex h-100 align-items-center">
+											<!--begin::Option-->
+											<div class="w-100 d-flex flex-column flex-center rounded-3 bg-body py-15 px-10">
+												<!--begin::Heading-->
+												<div class="mb-7 text-center">
+													<!--begin::Title-->
+													<h1 class="text-dark mb-5 fw-boldest">{{ data.membership_name }}</h1>
+													<!--end::Title-->
+													<!--begin::Price-->
+													<div class="text-center">
+														<span class="mb-2 text-primary">S/. </span>
+														<span class="fs-3x fw-bolder text-primary" data-kt-plan-price-month="99" data-kt-plan-price-annual="999">{{ data.membership_price }}</span>
+														<span class="fs-7 fw-bold opacity-50" data-kt-plan-price-month="Mon" data-kt-plan-price-annual="Ann">/ Mes</span>
+													</div>
+													<!--end::Price-->
+												</div>
+												<!--end::Heading-->
+												<!--begin::Features-->
+												<div class="w-100 mb-10">
+													<!--begin::Item-->
+													<div class="d-flex flex-stack mb-5">
+														<span class="fw-bold fs-6 text-gray-800 text-start pe-3" v-html="data.membership_description"></span>
+														<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
+														<span class="svg-icon svg-icon-1 svg-icon-success">
+															<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="black" />
+																<path d="M10.4343 12.4343L8.75 10.75C8.33579 10.3358 7.66421 10.3358 7.25 10.75C6.83579 11.1642 6.83579 11.8358 7.25 12.25L10.2929 15.2929C10.6834 15.6834 11.3166 15.6834 11.7071 15.2929L17.25 9.75C17.6642 9.33579 17.6642 8.66421 17.25 8.25C16.8358 7.83579 16.1642 7.83579 15.75 8.25L11.5657 12.4343C11.2533 12.7467 10.7467 12.7467 10.4343 12.4343Z" fill="black" />
+															</svg>
+														</span>
+														<!--end::Svg Icon-->
+													</div>
+													<!--end::Item-->
+												</div>
+												<!--end::Features-->
+												<!--begin::Select-->
+												<a href="#" class="btn btn-primary" @click="Create_Membership()">Empezar</a>
+												<!--end::Select-->
+											</div>
+											<!--end::Option-->
+										</div>
+									</div>
+									<!--end::Col-->
+								</div>
+								<!--end::Row-->
+							</div>
+							<!--end::Pricing-->
+						</div>
+						<!--end::Plans-->
+					</div>
+					<!--end::Container-->
+				</div>
+				<!--end::Wrapper-->
+				<!--begin::Curve bottom-->
+				<div class="landing-curve landing-dark-color">
+					<svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z" fill="currentColor"></path>
+					</svg>
+				</div>
+				<!--end::Curve bottom-->
+			</div>
 
 </template>
 

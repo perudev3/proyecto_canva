@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
     public function get_categories()
     {
-        return category::all();
+        return category::paginate(1);
     }
 
     public function create_categories(Request $request)

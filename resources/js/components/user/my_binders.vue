@@ -1,40 +1,19 @@
 <template>
     <div>
-        <div class="container" style="margin-top:-25px;margin-bottom: 32px;">
-                <div class="row">
-                    <div class="col-sm-12" style="background: -webkit-linear-gradient(110deg, rgb(126, 54, 228) 10%, rgb(110, 209, 419) 66%);border-radius: 17px;padding: 28px;padding-top: 0px;">
-                        <div id="div-search" align="center">
-                            <h2>¿Qué Buscas?</h2>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">
-                                        <i class="fa fa-search"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Buscar..." id="input-search">                                
-                            </div>                            
-                        </div>
-                       
-                    </div>                    
-                </div>
-        </div>
-    
-        <div class="container">
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">{{binder_name}}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
                         </div>
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-4" v-for="data in files">
+                                    <div class="col-md-6 col-lg-4 col-xl-3" v-for="data in files" :key="data.id">
                                         <a :href="'/file/'+data.file_url" target="_blank">
-                                            <img :src="'/file/'+data.file_url" style="width: 100%;" />
+                                            <div class="symbol symbol-60px mb-5">
+                                                <img src="/media/svg/files/pdf.svg"/>
+                                            </div>
                                         </a>                                        
                                     </div>
                                 </div>
@@ -43,28 +22,38 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">Mis Carpetas</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="container" style="background: #f9f5f5;padding: 10px;border-radius: 9px;">
-                        <div class="row">
-                                <div class="col-md-2" v-for="data in binders" @click="GetFiles(data.binder_id, data.binder_name, data.empresas.membership_id)">
-                                    <i class="fas fa-folder" style="font-size: 62px;" ></i>
-                                    <p><label>{{ data.binder_name }}</label></p>
-                                </div>
-                        </div>
+
+            <div class="d-flex flex-wrap flex-stack mb-6">
+                <h3 class="fw-bolder my-2">Mis Carpetas
+                <span class="fs-6 text-gray-400 fw-bold ms-1">{{ binders.length }}+ en fila</span></h3>
+                <div class="d-flex my-2">
+                    <div class="d-flex align-items-center position-relative me-4">
+                        <span class="svg-icon svg-icon-3 position-absolute ms-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+                            </svg>
+                        </span>
+                        <input type="text" id="kt_filter_search" class="form-control form-control-white form-control-sm w-150px ps-9" placeholder="Buscar Carpeta..." />
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="row g-6 g-xl-9 mb-6 mb-xl-9">
+				<div class="col-md-6 col-lg-4 col-xl-3" v-for="data in binders" :key="data.id" @click="GetFiles(data.binder_id, data.binder_name, data.empresas.membership_id)">
+					<div class="card h-100">
+						<div class="card-body d-flex justify-content-center text-center flex-column p-8"  >
+							<a class="text-gray-800 text-hover-primary d-flex flex-column">
+								<div class="symbol symbol-75px mb-5">
+									<img src="media/svg/files/folder-document.svg" alt="" />
+								</div>
+								<div class="fs-5 fw-bolder mb-2">{{ data.binder_name }}</div>
+							</a>
+							<div class="fs-7 fw-bold text-gray-400">{{ data.files.length }} archivos</div>
+						</div>
+					</div>
+				</div>
+            </div>
 
     </div>
 
